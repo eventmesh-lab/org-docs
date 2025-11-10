@@ -1,46 +1,13 @@
 name: Build and Deploy aggregated docs
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout this repo
-        uses: actions/checkout@v4
-
-      - name: Install tools
+      - name: Workflow deshabilitado temporalmente
         run: |
-          python -V || true
-          pip install mkdocs mkdocs-material
-
-      - name: Prepare external clones
-        run: |
-          mkdir -p external docs/services
-          # requiere repos.json en la raíz
-          echo "Cloning listed repos..."
-          REPOS=$(jq -r '.repos[]' repos.json)
-          for R in $REPOS; do
-            NAME=$(basename "$R")
-            echo "Cloning $R -> external/$NAME"
-            git clone --depth 1 "https://x-access-token:${GITHUB_TOKEN}@github.com/$R.git" "external/$NAME" || echo "Clone failed for $R (may be private or not exist)"
-            if [ -d "external/$NAME/docs" ]; then
-              mkdir -p "docs/services/$NAME"
-              cp -r external/$NAME/docs/* "docs/services/$NAME/" || true
-            fi
-          done
-
-      - name: Show docs tree
-        run: ls -R | sed -n '1,200p'
-
-      - name: Build site
-        run: mkdocs build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          echo "El flujo de agregado y despliegue externo está deshabilitado temporalmente."
+          echo "Cuando desees reactivarlo, restaura este archivo desde el historial de Git."
