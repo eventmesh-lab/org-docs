@@ -6,8 +6,7 @@ Este directorio contiene la documentación detallada de cada uno de los microser
 
 La plataforma está organizada en **12 bounded contexts** implementados mediante **20 microservicios** independientes. Para una visión completa de la arquitectura, consulta:
 
-- [ADR-0006: Definición de Microservicios y Bounded Contexts](../adr/0006-definicion-microservicios.md)
-- [ADR-0005: Arquitectura de Microservicios](../adr/0005-arquitectura-microservicios.md)
+- [ADR-0005: Definición de Microservicios y Bounded Contexts](../adr/0005-definicion-microservicios.md)
 
 ---
 

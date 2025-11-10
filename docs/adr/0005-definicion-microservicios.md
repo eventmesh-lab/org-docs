@@ -1,4 +1,4 @@
-# ADR-0006: Definición de Microservicios y Bounded Contexts
+# ADR-0005: Definición de Microservicios y Bounded Contexts
 
 ## Estado
 Propuesto
@@ -215,7 +215,7 @@ Para bloqueo optimista y cache de alta velocidad:
 - [ADR-0002: Lenguaje Ubicuo Global](./0002-lenguaje-ubiquo-global.md)
 - [ADR-0003: Stack Tecnológico](./0003-stack-tecnologico.md)
 - [ADR-0004: Microservice Template](./0004-microservice-template.md)
-- [ADR-0005: Arquitectura de Microservicios](./0005-arquitectura-microservicios.md)
+- [ADR-0005: Arquitectura de Microservicios](./0005-definicion-microservicios.md)
 - [Lenguaje Ubicuo](../lenguaje-ubicuo.md)
 - [Guía Técnica](../guia-tecnica.md)
 
