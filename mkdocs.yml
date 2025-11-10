@@ -8,6 +8,7 @@ nav:
   - "Lenguaje ubicuo": lenguaje-ubicuo.md
   - "Proyecto base": proyecto-base.md
   - Negocio: guia-contexto-negocio.md
+  - Técnica: guia-tecnica.md
   - ADRs:
     - "Global ADRs": adrs-global.md
   - Servicios:
