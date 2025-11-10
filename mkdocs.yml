@@ -5,6 +5,7 @@ theme:
 nav:
   - Home: index.md
   - Arquitectura: arquitectura.md
+  - "Lenguaje ubicuo": lenguaje-ubicuo.md
   - "Proyecto base": proyecto-base.md
   - ADRs:
     - "Global ADRs": adrs-global.md

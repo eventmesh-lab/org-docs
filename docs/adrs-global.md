@@ -7,3 +7,6 @@ Formato recomendado para ADRs en cada repo:
 - metadata: Status, Date, Context, Decision, Consequences
 
 Ejemplo de plantilla local de ADR: docs/adr/0001-template.md (ver repo de plantilla).
+
+## Registro
+- [ADR 0002 - Adoptar lenguaje ubicuo global](adr/0002-lenguaje-ubiquo-global.md)
