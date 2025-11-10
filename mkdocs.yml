@@ -7,6 +7,7 @@ nav:
   - Arquitectura: arquitectura.md
   - "Lenguaje ubicuo": lenguaje-ubicuo.md
   - "Proyecto base": proyecto-base.md
+  - Negocio: guia-contexto-negocio.md
   - ADRs:
     - "Global ADRs": adrs-global.md
   - Servicios:
