@@ -1,0 +1,26 @@
+name: Notify org-docs
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify central docs repo
+        env:
+          ORG_DOCS_TOKEN: ${{ secrets.ORG_DOCS_DISPATCH_TOKEN }}
+          ORG_DOCS_OWNER: your-org
+          ORG_DOCS_REPO: org-docs
+        run: |
+          if [ -z "${ORG_DOCS_TOKEN}" ]; then
+            echo "Missing ORG_DOCS_DISPATCH_TOKEN secret" >&2
+            exit 1
+          fi
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${ORG_DOCS_TOKEN}" \
+            "https://api.github.com/repos/${ORG_DOCS_OWNER}/${ORG_DOCS_REPO}/dispatches" \
+            -d '{"event_type":"docs-changed","client_payload":{"service":"'${GITHUB_REPOSITORY}'"}}'

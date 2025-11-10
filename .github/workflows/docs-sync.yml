@@ -1,0 +1,67 @@
+name: Sync aggregated docs
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - docs-changed
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate secrets
+        run: |
+          if [ -z "${{ secrets.ORG_DOCS_SYNC_TOKEN }}" ]; then
+            echo "ORG_DOCS_SYNC_TOKEN secret is required" >&2
+            exit 1
+          fi
+
+      - name: Install tooling
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Aggregate service docs
+        env:
+          ORG_DOCS_SYNC_TOKEN: ${{ secrets.ORG_DOCS_SYNC_TOKEN }}
+        run: |
+          set -euo pipefail
+          rm -rf external
+          mkdir -p external docs/services
+          find docs/services -mindepth 1 -maxdepth 1 -not -name README.md -exec rm -rf {} +
+          REPOS=$(jq -r '.repos[]' repos.json)
+          for R in $REPOS; do
+            NAME=$(basename "$R")
+            echo "::group::Syncing $R"
+            if git clone --depth 1 "https://${ORG_DOCS_SYNC_TOKEN}@github.com/$R.git" "external/$NAME"; then
+              if [ -d "external/$NAME/docs" ]; then
+                mkdir -p "docs/services/$NAME"
+                cp -r external/$NAME/docs/. "docs/services/$NAME/"
+              else
+                echo "Docs folder missing in $R, skipping copy"
+              fi
+            else
+              echo "Clone failed for $R"
+            fi
+            echo "::endgroup::"
+          done
+          rm -rf external
+
+      - name: Commit changes
+        run: |
+          set -e
+          if git status --porcelain -- docs/services | grep -q .; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add docs/services
+            git commit -m "chore: sync service docs"
+            git push
+          else
+            echo "No documentation changes detected"
+          fi

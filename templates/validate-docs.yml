@@ -1,0 +1,19 @@
+name: Validate docs presence
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+
+jobs:
+  check-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check docs folder
+        run: |
+          if [ ! -f docs/index.md ]; then
+            echo "docs/index.md missing. Please add basic docs for the service." >&2
+            exit 1
+          fi
+          echo "docs/index.md found."

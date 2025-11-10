@@ -1,0 +1,17 @@
+site_name: Documentación - Proyecto DS 2025-02
+site_description: Portal central de documentación agregada por servicio
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Arquitectura: arquitectura.md
+  - "Proyecto base": proyecto-base.md
+  - ADRs:
+    - "Global ADRs": adrs-global.md
+  - Servicios:
+    # Las secciones para cada servicio se crearán copiando docs/<service>/
+    - "Descripción general": services/README.md
+plugins:
+  - search
+extra:
+  repo_url: https://github.com/eventmesh-lab/org-docs
