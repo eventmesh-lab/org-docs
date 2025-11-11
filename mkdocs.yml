@@ -7,6 +7,7 @@ nav:
   - Arquitectura: arquitectura.md
   - "Lenguaje ubicuo": lenguaje-ubicuo.md
   - "Proyecto base": proyecto-base.md
+  - "Proyecto DS 2025-02": "Proyecto DS 2025-02.pdf"
   - Negocio: guia-contexto-negocio.md
   - Técnica: guia-tecnica.md
   - ADRs:
@@ -14,6 +15,12 @@ nav:
   - Servicios:
     # Las secciones para cada servicio se crearán copiando docs/<service>/
     - "Descripción general": services/README.md
+    - "Front end":
+      - "Descripción": front-end/README.md
+      - "Arquitectura": front-end/ARCHITECTURE.md
+      - "Instalación / Setup": front-end/SETUP.md
+      - "Mocks y adaptadores": front-end/MOCKS.md
+      - "Lenguaje ubicuo": front-end/UBIQUITOUS_LANGUAGE.md
 plugins:
   - search
 extra:
