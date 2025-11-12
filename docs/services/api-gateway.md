@@ -1,6 +1,6 @@
-# API Gateway (svc_yarn_api-gateway)
+# API Gateway (svc_yarp_api-gateway)
 
-Este documento resume la información principal del servicio API Gateway `svc_yarn_api-gateway` del proyecto EventMesh.
+Este documento resume la información principal del servicio API Gateway `svc_yarp_api-gateway` del proyecto EventMesh.
 
 ## Propósito
 
@@ -17,7 +17,7 @@ El API Gateway actúa como punto de entrada y proxy para eventos y rutas relacio
 
 ## Ubicación del código
 
-`Services/eventmesh-frontend/svc_yarn_api-gateway/src/`
+`Services/eventmesh-frontend/svc_yarp_api-gateway/src/`
 
 ## Ejecutar localmente
 

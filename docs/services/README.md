@@ -55,7 +55,7 @@ La plataforma está organizada en **12 bounded contexts** implementados mediante
 - **Storage Service** *(pendiente)* - Proxy a Firebase Storage
 
 ### 12. Gateway y Orquestación
-- **[API Gateway](api-gateway.md)** - YARP / svc_yarn_api-gateway (documentado en este portal)
+- **[API Gateway](api-gateway.md)** - YARP / svc_yarp_api-gateway (documentado en este portal)
 
 ---
 
