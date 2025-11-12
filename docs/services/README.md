@@ -55,7 +55,7 @@ La plataforma está organizada en **12 bounded contexts** implementados mediante
 - **Storage Service** *(pendiente)* - Proxy a Firebase Storage
 
 ### 12. Gateway y Orquestación
-- **API Gateway** *(pendiente)* - YARP con integración a Keycloak
+- **[API Gateway](api-gateway.md)** - YARP / svc_yarn_api-gateway (documentado en este portal)
 
 ---
 
@@ -100,7 +100,7 @@ Cada microservicio documentado incluye:
 | `recommendations-service` | Analítica | MongoDB | ⏳ Pendiente |
 | `promotions-service` | Marketing | PostgreSQL | ⏳ Pendiente |
 | `storage-service` | Archivos | Firebase Storage | ⏳ Pendiente |
-| `api-gateway` | Gateway | N/A | ⏳ Pendiente |
+| `api-gateway` | Gateway | N/A | ✅ Documentado (básico) |
 
 ---
 

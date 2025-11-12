@@ -14,3 +14,4 @@ Ejemplo de plantilla local de ADR: docs/adr/0001-template.md (ver repo de planti
 - [ADR 0004 - Crear y adoptar template para microservicios (Hexagonal + TDD)](adr/0004-microservice-template.md)
 - [ADR 0005 - Definición de Microservicios y Bounded Contexts](adr/0005-definicion-microservicios.md) **(Adoptado)**
 - [ADR 0006 - Integración de la documentación del Front-end](adr/0006-creacion-front-end.md) **(Propuesto)**
+- [ADR 0007 - Documentar y decidir sobre svc_yarn_api-gateway (API Gateway)](adr/0007-svc-yarn-api-gateway.md) **(Accepted)**
